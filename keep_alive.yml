@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Wake up Streamlit App
         run: |
-          curl https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/
+          curl -I https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/
