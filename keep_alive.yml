@@ -2,8 +2,10 @@ name: Keep App Alive
 
 on:
   schedule:
-    # Runs at 00:00 every day (you can adjust this cron schedule)
-    - cron: "0 0 * * *"
+    # Runs at specific time every day (you can adjust this cron schedule)
+    - cron: "35 3 * * *"
+    - cron: "30 8 * * *"
+    - cron: "30 11 * * *"
   workflow_dispatch: # Allows you to run it manually if needed
 
 jobs:
