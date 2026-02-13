@@ -1,0 +1,16 @@
+name: Keep Streamlit Alive
+
+on:
+  schedule:
+    - cron: "35 3 * * *"
+    - cron: "30 8 * * *"
+    - cron: "30 11 * * *"
+  workflow_dispatch: 
+
+jobs:
+  ping_site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check website status
+        run: |
+          curl -I https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/
