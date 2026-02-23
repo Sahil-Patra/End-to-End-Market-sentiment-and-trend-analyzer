@@ -2,9 +2,7 @@ name: Keep Streamlit Alive
 
 on:
   schedule:
-    - cron: "35 3 * * *"
-    - cron: "30 8 * * *"
-    - cron: "30 11 * * *"
+    - cron: "0 */6 * * *" 
   workflow_dispatch: 
 
 jobs:
@@ -13,4 +11,4 @@ jobs:
     steps:
       - name: Check website status
         run: |
-          curl -I https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/
+          curl -s https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/ > /dev/null
