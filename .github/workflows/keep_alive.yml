@@ -1,14 +1,17 @@
 name: Keep Streamlit Alive
-
 on:
   schedule:
-    - cron: "0 */6 * * *" 
-  workflow_dispatch: 
+    - cron: "0 */10 * * *" # Runs every 12 hours
+  workflow_dispatch:
 
 jobs:
-  ping_site:
+  keep_alive:
     runs-on: ubuntu-latest
     steps:
-      - name: Check website status
+      - uses: actions/checkout@v4
+      - name: Create empty commit
         run: |
-          curl -s https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/ > /dev/null
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit --allow-empty -m "Keep-alive nudge"
+          git push
