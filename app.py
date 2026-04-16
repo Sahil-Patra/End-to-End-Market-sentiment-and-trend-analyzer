@@ -63,7 +63,7 @@ def load_sentiment_model():
         return model, "FinBERT (Financial Sentiment)"
     except Exception:
         try:
-            # Fallback to Twitter RoBERTa model (good for short texts)
+            # Fallback to Twitter RoBERTa model, good for short texts
             model = pipeline(
                 "sentiment-analysis",
                 model="cardiffnlp/twitter-roberta-base-sentiment-latest",
