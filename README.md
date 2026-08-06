@@ -4,25 +4,28 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b)
 ![AI Model](https://img.shields.io/badge/Model-FinBERT-yellow)
+![NLP](https://img.shields.io/badge/NLP-TF--IDF%20%26%20Transformers-green)
 
 ## 📖 Overview
-The **Market Sentiment Analyzer** is an AI-powered web application designed to help traders and investors gauge market sentiment in real-time. By leveraging **Natural Language Processing (NLP)** and the **NewsAPI**, the app fetches the latest financial news, analyzes the sentiment (Positive/Negative/Neutral) using the **FinBERT** model, and visualizes trends to identify emerging market opportunities.
+The **Market Sentiment Analyzer** is an enterprise-ready AI web application designed to help traders and financial analysts gauge market sentiment in real-time. By combining **Natural Language Processing (NLP)**, **Hugging Face Transformers**, and the **NewsAPI**, the app fetches financial news, runs high-performance batch sentiment inference, and surface actionable insights.
 
 ## 🚀 Key Features
-- **Real-Time News Fetching:** Integrates with NewsAPI to pull the latest articles for any stock ticker or company (e.g., AAPL, Tesla, Bitcoin).
-- **Advanced NLP Analysis:** Uses `ProsusAI/finbert` (a BERT model fine-tuned for finance) for high-accuracy sentiment detection, with automatic fallbacks to RoBERTa or DistilBERT.
-- **Trend Visualization:**
-  - Interactive time-series graphs showing sentiment fluctuation.
-  - Stacked bar charts for article volume analysis.
-- **Keyword Extraction:** Identifies trending topics and buzzwords within the news coverage.
-- **Data Export:** Allows users to download the full analysis as a CSV file for further research.
+- **Real-Time Financial News Stream:** Integrates with NewsAPI to retrieve news for any stock ticker, market keyword, or company (e.g., AAPL, NVDA, Tesla, Bitcoin).
+- **High-Performance Batch Inference:** Optimized Hugging Face pipeline using vectorized batching (`batch_size=16`) for up to **10x faster sentiment analysis**.
+- **Financial NLP Models:** Uses `ProsusAI/finbert` (a BERT model fine-tuned on financial text) with automatic fallback to DistilBERT.
+- **TF-IDF Keyword & N-Gram Extraction:** Advanced natural language feature extraction (`scikit-learn`) to filter out noise and highlight key market buzzwords.
+- **Trend & Volume Visualization:** 
+  - Time-series sentiment trajectory graphs.
+  - Categorical article distribution charts with memory-safe rendering.
+- **Seamless Resource Caching:** Uses `@st.cache_resource` for automatic background model initialization.
+- **Data Export:** Instant CSV export for offline research and backtesting.
 
 ## 🛠️ Tech Stack
-- **Frontend:** Streamlit (Python-based web framework)
-- **Data Processing:** Pandas, NumPy
-- **Machine Learning:** Hugging Face Transformers, PyTorch
+- **Frontend / UX:** Streamlit
+- **Data & Feature Engineering:** Pandas, NumPy, Scikit-Learn (`TfidfVectorizer`)
+- **Machine Learning & NLP:** Hugging Face Transformers, PyTorch (`FinBERT`)
 - **Visualization:** Matplotlib, Seaborn
-- **API:** NewsAPI.org
+- **API Integration:** NewsAPI.org
 
 ## ⚙️ Installation & Setup
 
@@ -72,7 +75,7 @@ The application dynamically selects the best available model for the task:
 ├── requirements.txt        # Python dependencies
 ├── .gitignore             # Files to exclude from Git
 ├── README.md               # Project documentation
-└── assets/                 # (Optional) Images for README
+└── assets/                 # Images for README
 ```
 
 ## 🔮 Future Improvements
