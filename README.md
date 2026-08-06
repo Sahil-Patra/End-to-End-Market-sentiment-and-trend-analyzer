@@ -31,7 +31,7 @@ The **Market Sentiment Analyzer** is an enterprise-ready AI web application desi
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/market-sentiment-analyzer.git
+   git clone https://github.com/Sahil-Patra/End-to-End-Market-sentiment-and-trend-analyzer.git
    cd market-sentiment-analyzer
    ```
 
