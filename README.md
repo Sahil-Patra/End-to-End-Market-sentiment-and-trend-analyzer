@@ -27,6 +27,9 @@ The **Market Sentiment Analyzer** is an enterprise-ready AI web application desi
 - **Visualization:** Matplotlib, Seaborn
 - **API Integration:** NewsAPI.org
 
+## 🚀 Live Demo
+**Check out the live application here:** [👉 Market Sentiment and Trend Analyzer](https://end-to-end-market-sentiment-and-trend-analyzer-gfmrfwfwtbp4car.streamlit.app/)
+
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**
